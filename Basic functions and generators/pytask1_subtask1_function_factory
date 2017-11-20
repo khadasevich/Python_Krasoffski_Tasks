@@ -1,0 +1,52 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""This module created for first sub task from list of python tasks"""
+
+
+def func_factory_f(variable):
+    """Creation of function factory with closure"""
+
+    def factory_inner(inner=10):
+        """Function factory_inner closures variable"""
+        return variable + inner
+
+    return factory_inner
+
+
+add5 = func_factory_f(5)
+print (add5())
+
+
+def inner_function(func):
+    """Creation of function factory with decorator"""
+
+    def wrapper(arg):
+        """Function which takes argument"""
+        return arg + 10
+
+    return wrapper
+
+
+@inner_function
+def func_factory_s(inner):
+    """Decorated function"""
+    pass
+
+
+add5 = func_factory_s(5)
+print (add5)
+
+
+def func_factory_t(variable):
+    """Creation of function factory with help of ???"""
+    custom = inner_func(variable)
+    return custom
+
+
+def inner_func(var):
+    """Inner function which performs concatenation"""
+    return var + 10
+
+
+add5 = func_factory_t(5)
+print add5
